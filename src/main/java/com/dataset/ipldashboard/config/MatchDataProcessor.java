@@ -11,10 +11,10 @@ import java.time.format.DateTimeFormatter;
 
 public class MatchDataProcessor implements ItemProcessor<MatchInputDTO, MatchModel> {
 
-        private static final Logger log = LoggerFactory.getLogger(MatchDataProcessor.class);
+//        private static final Logger log = LoggerFactory.getLogger(MatchDataProcessor.class);
 
     @Override
-    public MatchModel process(final MatchInputDTO matchInputDTO) throws Exception {
+    public MatchModel process(final MatchInputDTO matchInputDTO) {
 
         MatchModel matchModel = new MatchModel();
         matchModel.setId(Long.parseLong(matchInputDTO.getMatchId()));

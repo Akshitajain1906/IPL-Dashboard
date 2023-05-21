@@ -32,7 +32,7 @@ public class BatchConfig {
                 .resource(new ClassPathResource("match-data.csv"))
                 .delimited()
                 .names(fieldNames)
-                .fieldSetMapper(new BeanWrapperFieldSetMapper<MatchInputDTO>() {{
+                .fieldSetMapper(new BeanWrapperFieldSetMapper<>() {{
                     setTargetType(MatchInputDTO.class);
                 }})
                 .build();
@@ -57,14 +57,12 @@ public class BatchConfig {
     @Bean
     public Job importUserJob(JobRepository jobRepository,
                              JobCompletionNotificationListener listener, Step step1) {
-        Job res =
-                new JobBuilder("importUserJob", jobRepository)
-                        .incrementer(new RunIdIncrementer())
-                        .listener(listener)
-                        .flow(step1)
-                        .end()
-                        .build();
-        return res;
+        return new JobBuilder("importUserJob", jobRepository)
+                .incrementer(new RunIdIncrementer())
+                .listener(listener)
+                .flow(step1)
+                .end()
+                .build();
     }
 
     @Bean

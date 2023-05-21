@@ -65,7 +65,7 @@ public class JobCompletionNotificationListener implements JobExecutionListener {
                         }
                     });
              teamData.values().forEach(em::persist);
-            teamData.values().forEach(team->System.out.println(team));
+            teamData.values().forEach(System.out::println);
         }
     }
 }
