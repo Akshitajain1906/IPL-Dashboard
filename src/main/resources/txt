@@ -1,0 +1,10 @@
+match -->
+id, city, date, playerOfMatch, venue, team1, team2, tossWinner, tossDecision, matchWinner, result, umpire1, umpire2
+
+notes -->
+entity manager persist insted of sql in batchconfig
+
+shortcut -->
+ctrl+shift+alt+j = Select All occurrences of something
+
+:id, :city, :date, :playerOfMatch, :venue, :team1, :team2, :tossWinner, :tossDecision, :matchWinner, :result, :umpire1, :umpire2
